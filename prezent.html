@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ПРЕЗЕНТАЦИЯ</title>
+
+    <style>
+        * {
+          /*  font-family: "RobotoRegular";/*этот стиль применится для всех элементов*/
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+        }
+    </style>
+
+    <style>
+        table {
+            table-layout: fixed; /* Фиксированная ширина ячеек */
+            width: 700px; /* Ширина таблицы */
+        }
+        .col1 { width: 160px; }
+        .coln { width: 60px; }
+    </style>
+
+    <style>
+        p.clip {
+            white-space: nowrap; /* Запрещаем перенос строк */
+            overflow: hidden; /* Обрезаем все, что не помещается в область */
+          /*  overflow: scroll; /* добавляем полосу прокрутки и тогда убрать  text-overflow: ellipsis;*/
+            background: #e8ff06; /* Цвет фона */
+            padding: 5px; /* Поля вокруг текста */
+            text-overflow: ellipsis; /* Добавляем многоточие */
+            width: 250px;
+        }
+    </style>
+
+    <style>
+        .example{
+            display: inline-block;
+            margin-top: 100px;
+            background-color: #dadeea;
+            position: relative;
+        }
+
+        .example::before{
+            position: absolute;
+            top: -10px;
+            left: 0;
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent #dadeea transparent;
+        }
+    </style>
+
+    <style>
+        .tooltip:hover::after {
+            content: "Здесь мы покажем нашу подсказку!";
+            background: #fff2f9;
+            font: 12pt sans-serif;
+            color: red;
+        }
+
+    </style>
+
+    <style>
+        .icon{
+            position: relative;
+            background: #535353;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        .icon::before {
+            /*circle styles*/
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 8px;
+            height: 8px;
+            border: 3px solid #ccc;
+            border-radius: 14px;
+        }
+        .icon::after {
+            /*line styles*/
+            content: "";
+            position: absolute;
+            top: 13px;
+            left: 18px;
+            width: 4px;
+            height: 11px;
+            margin-top: 0;
+            background: #ccc;
+            transform: rotate(-45deg);
+            border-radius: 2px;
+        }
+    </style>
+
+    <style>
+        .icon2{
+            position: relative;
+            background: #535353;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .icon2::before {
+            /*line styles*/
+            content: "";
+            display: block;
+            height: 13px;
+            width: 0;
+            border-left: solid 2px #ccc;
+            position: absolute;
+            top: 8px;
+            left: 6px;
+        }
+
+        .icon2::after {
+           /* triangle styles*/
+            content: "";
+            height: 0;
+            width: 0;
+            border-style: solid;
+            border-width: 7px 12px 7px 0;
+            border-color: transparent #ccc transparent transparent;
+            position: absolute;
+            top: 8px;
+            left: 10px;
+        }
+
+    </style>
+
+    <style>
+        .minerals{
+            table-layout: auto;
+          /*  width: 100%;  */
+            width: 600px;
+
+        }
+    </style>
+
+    <style>
+        .minerals2{
+            table-layout: fixed;
+          /*  width: 100%;  */
+            width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        .minerals2 tr td{
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+    </style>
+
+</head>
+<body>
+<h3>table-layout: fixed; /* Фиксированная ширина ячеек */</h3>
+<table border="1">
+    <col class="col1">
+    <col span="9" class="coln">
+    <tr>
+        <td>&nbsp;</td>
+        <td>2012</td><td>2013</td><td>2014</td><td>2015</td>
+        <td>2016</td><td>2017</td><td>2018</td><td>2019</td>
+        <td>2020</td>
+    </tr>
+    <tr>
+        <td>Нефть</td><td>5</td><td>7</td><td>2</td><td>8</td>
+        <td>3</td><td>34</td><td>62</td><td>74</td><td>57</td>
+    </tr>
+    <tr>
+        <td>Золото</td><td>3</td> <td>6</td><td>4</td><td>6</td>
+        <td>4</td><td>69</td><td>72</td><td>56</td><td>47</td>
+    </tr>
+    <tr>
+        <td>Дерево</td><td>5</td><td>8</td><td>3</td><td>4</td>
+        <td>7</td><td>73</td><td>79</td><td>34</td><td>86</td>
+    </tr>
+</table>
+
+<h3>text-overflow</h3>
+    <p class="clip">Магнитное поле ничтожно гасит большой круг небесной сферы,
+        в таком случае эксцентриситеты и наклоны орбит возрастают.Магнитное поле ничтожно гасит большой круг небесной сферы,
+        в таком случае эксцентриситеты и наклоны орбит возрастают.Магнитное поле ничтожно гасит большой круг небесной сферы,
+        в таком случае эксцентриситеты и наклоны орбит возрастают.Магнитное поле ничтожно гасит большой круг небесной сферы,
+        в таком случае эксцентриситеты и наклоны орбит возрастают.
+    </p>
+
+
+<h3>::before, ::after</h3>
+<div class="example">Button with Up Arrow</div>
+<br />
+<br />
+<h3>Здесь мы покажем нашу подсказку! ::before, ::after</h3>
+<a class="tooltip" title="This is some information for our tooltip.">
+    <span>CSS3 Tooltip</span>
+</a>
+<br />
+<br />
+<h3>Иконки</h3>
+<div class="icon"></div>
+<br />
+<br />
+<h3>Иконки2</h3>
+<div class="icon2"></div>
+
+<br />
+<br />
+
+<h3>table-layout: auto; /* auto ширина ячеек */</h3>
+<table class="minerals" border="1">
+    <tr>
+        <td>ssssssss</td>
+        <td>ssssssssssssssssssssgggggggggggggggg</td>
+        <td>ff</td>
+    </tr>
+</table>
+
+
+<br />
+<br />
+
+<h3>table-layout: fixed; /* fixed ширина ячеек */</h3>
+<table class="minerals2" border="1">
+    <tr>
+        <td>ssssssss</td>
+        <td>ssssssssssssssssssssggggggggggggg</td>
+        <td>ff</td>
+    </tr>
+</table>
+
+</body>
+</html>
